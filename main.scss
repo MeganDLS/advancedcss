@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+
+// variables
+$background-color: #FAEBD7;
+$article-background-color: white;
+$accent-color: #6495ED;
+$shadow-color: gray;
+$text-color: black;
+
+@mixin transition($seconds:.5s) {
+    -webkit-transition: $seconds;
+    -o-transition: $seconds;
+    transition: $seconds;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    background-color: $background-color;
+}
+
+h1,
+h2 {
+    font-family: 'Lora', serif;
+}
+
+h2 {
+    font-size: 1.8rem;
+
+    a:link,
+    a:visited {
+        color: $text-color;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $accent-color;
+    }
+
+}
+
+li {
+    a:hover {
+        color: $article-background-color;
+        text-decoration: underline;
+    }
+}
+
+p {
+
+    a:link,
+    a:visited {
+        color: $accent-color;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+
+h1 {
+    text-align: right;
+    margin-right: 2rem;
+    padding-top: 2.3rem;
+}
+
+hr {
+    width: 85%;
+    text-align: right;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-right: 2rem;
+    padding-bottom: 2rem;
+    text-align: right;
+}
+
+nav li {
+    margin: 1rem 0;
+}
+
+header {
+    background-color: $accent-color;
+}
+
+img {
+    max-width: 65%;
+}
+
+article {
+    background-color: $article-background-color;
+    padding: 3rem 4rem 3rem 5rem;
+    margin: 3rem 1rem 3rem 1rem;
+    box-shadow: 2px 3px 5px $shadow-color;
+}
+
+.post-date {
+    color: $shadow-color;
+}
+
+/* LINKS
+H1 link: Kids Read for Fun
+Navigation Links: About, Current Reviews, and Archive
+Article links: Septimus and Magnus
+P links: Read more
+ */
+
+/* visited link */
+header a:link,
+header a:visited,
+li a:visited,
+li a:link {
+    color: $background-color;
+    text-decoration: none;
+}
+
+/* mouse over link */
+header a:hover,
+h2 a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 700px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    header {
+        background-color: $accent-color;
+        height: 100%;
+        position: fixed;
+        @include transition;
+        padding-top: 2rem;
+        padding-left: 1rem;
+    }
+
+    article {
+        margin: 1rem 4rem 1rem 1rem;
+    }
+
+    main {
+        padding-left: 23.5rem;
+    }
+}
